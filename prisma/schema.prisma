@@ -11,7 +11,7 @@ datasource db {
 }
 
 model User {
-  id       Int      @id @default(autoincrement())
+  id       String   @id @default(uuid())
   name     String
   email    String   @unique
   createAt DateTime @default(now())
@@ -19,7 +19,7 @@ model User {
 }
 
 model Todo {
-  id    Int     @id @default(autoincrement())
+  id    String  @id @default(uuid())
   title String
   done  Boolean @default(false)
 

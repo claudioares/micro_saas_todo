@@ -1,6 +1,7 @@
 import express, { type Application } from "express"
 import cors from 'cors'
-import { listenUserController } from "./routers/methodGET";
+import { listenClientsController } from "./routers/listClients";
+import { listClientController } from "./routers/listClient";
 
 export class App {
     private app: Application;
@@ -23,7 +24,8 @@ export class App {
     }
 
     methodGet () {
-        this.app.get("/", listenUserController)
+        this.app.get("/clints", listenClientsController);
+        this.app.get("/client/:id", listClientController);
     }
 
 }
